@@ -3,8 +3,8 @@
 WIP. Base for creating SSR React apps.
 
 ## ToDo:
-- [ ] add `react` and `react-dom`
-- [ ] add `next.js`
+- [x] add `react` and `react-dom`
+- [x] add `next.js`
 - [ ] add `material-ui`
 - [ ] add `webpack-bundle-analyzer`
 - [ ] add `redux` and `redux-logic`
