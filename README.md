@@ -10,4 +10,4 @@ WIP. Base for creating SSR React apps.
 - [ ] add `redux` and `redux-logic`
 - [ ] add `jest`
 - [ ] add `enzyme`
-- [ ] add `eslint`
+- [x] add `eslint`
