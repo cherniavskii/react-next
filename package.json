@@ -19,8 +19,10 @@
   },
   "homepage": "https://github.com/cherniavskii/react-next#readme",
   "dependencies": {
+    "@material-ui/icons": "^1.0.0-beta.43",
     "@zeit/next-bundle-analyzer": "^0.1.1",
     "cross-env": "^5.1.4",
+    "material-ui": "^1.0.0-beta.43",
     "next": "^5.1.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
