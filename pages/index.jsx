@@ -24,7 +24,9 @@ const styles = {
   },
 };
 
-const Index = ({ classes, count, add, subtract, reset }) => (
+const Index = ({
+  classes, count, add, subtract, reset,
+}) => (
   <div className={classes.root}>
     <AppBar position="static">
       <Toolbar>
@@ -52,6 +54,10 @@ const Index = ({ classes, count, add, subtract, reset }) => (
 
 Index.propTypes = {
   classes: PropTypes.shape({}).isRequired,
+  count: PropTypes.number.isRequired,
+  add: PropTypes.func.isRequired,
+  subtract: PropTypes.func.isRequired,
+  reset: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

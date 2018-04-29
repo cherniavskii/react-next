@@ -1,6 +1,8 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect, Provider } from 'react-redux';
-import initStore from './store';
+import createStore from './store';
 
 const __NEXT_REDUX_STORE__ = '__NEXT_REDUX_STORE__';
 
@@ -31,14 +33,14 @@ export default (...connectArgs) => (Component) => {
     // Create connected page with initialProps
     return React.createElement(
       Provider,
-      { store: store && store.dispatch ? store : getOrCreateStore(initStore, initialState) },
+      { store: store && store.dispatch ? store : getOrCreateStore(createStore, initialState) },
       React.createElement(ConnectedComponent, initialProps),
     );
   };
 
   ComponentWithRedux.getInitialProps = async (props = {}) => {
     const isServer = checkServer();
-    const store = getOrCreateStore(initStore);
+    const store = getOrCreateStore(createStore);
 
     // Run page getInitialProps with store and isServer
     const initialProps = Component.getInitialProps
@@ -50,6 +52,12 @@ export default (...connectArgs) => (Component) => {
       initialState: store.getState(),
       initialProps,
     };
+  };
+
+  ComponentWithRedux.propTypes = {
+    store: PropTypes.shape().isRequired,
+    initialProps: PropTypes.shape({}).isRequired,
+    initialState: PropTypes.shape({}).isRequired,
   };
 
   return ComponentWithRedux;
