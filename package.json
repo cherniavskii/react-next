@@ -33,6 +33,7 @@
     "react-jss": "^8.4.0",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.2",
     "styled-jsx": "^2.2.6"
   },
   "devDependencies": {
