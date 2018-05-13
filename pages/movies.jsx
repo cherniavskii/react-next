@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import List, { ListItem, ListItemText } from 'material-ui/List';
 import { compose } from 'redux';
+import Link from 'next/link';
 import Header from '../components/Header';
 import withRoot from '../src/withRoot';
 import withRedux from '../src/withRedux';
@@ -12,9 +13,11 @@ const Movies = ({ movies }) => (
     <Header />
     <List>
       {movies.map(movie => (
-        <ListItem key={movie.id} dense button>
-          <ListItemText primary={movie.title} secondary={movie.description} />
-        </ListItem>
+        <Link href={`/movie?id=${movie.id}`} passHref key={movie.id}>
+          <ListItem dense button component="a">
+            <ListItemText primary={movie.title} secondary={movie.description} />
+          </ListItem>
+        </Link>
       ))}
     </List>
   </div>

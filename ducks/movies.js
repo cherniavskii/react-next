@@ -66,6 +66,7 @@ const fetchMoviesLogic = createLogic({
  */
 
 const getMovies = state => getState(state);
+const getMovie = (state, id) => getState(state)[id - 1];
 
 
 /*
@@ -92,4 +93,5 @@ export const logic = [
 
 export const selectors = {
   getMovies,
+  getMovie,
 };
