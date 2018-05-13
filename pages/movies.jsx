@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import List, { ListItem, ListItemText } from 'material-ui/List';
 import { compose } from 'redux';
 import Header from '../components/Header';
@@ -6,7 +7,7 @@ import withRoot from '../src/withRoot';
 import withRedux from '../src/withRedux';
 import { selectors as moviesSelectors, actions as moviesActions } from '../ducks/movies';
 
-const Movies = ({ fetchMovies, movies = [] }) => (
+const Movies = ({ movies }) => (
   <div>
     <Header />
     <List>
@@ -22,6 +23,14 @@ const Movies = ({ fetchMovies, movies = [] }) => (
 Movies.getInitialProps = (initialProps) => {
   initialProps.store.dispatch(moviesActions.fetchMovies());
   return {};
+};
+
+Movies.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.shape({})),
+};
+
+Movies.defaultProps = {
+  movies: [],
 };
 
 const mapStateToProps = state => ({
