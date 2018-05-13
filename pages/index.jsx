@@ -29,6 +29,9 @@ const Index = ({
       <Link href="/about" passHref>
         <Button component="a" variant="raised" color="primary">About</Button>
       </Link>
+      <Link href="/movies" passHref>
+        <Button component="a" variant="raised" color="primary">Movies</Button>
+      </Link>
       <Divider />
       <div>
         <Typography>Count: {count}</Typography>
