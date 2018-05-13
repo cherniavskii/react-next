@@ -8,7 +8,7 @@
     "dev": "next",
     "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore --cache",
     "lint-fix": "npm run lint -- --fix",
-    "server": "json-server --watch __mocks__/db.json --port 3003",
+    "server": "json-server --watch __mocks__/db.json --port 3003 --delay 1000",
     "start": "next start"
   },
   "repository": {
