@@ -3,15 +3,22 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { createLogicMiddleware } from 'redux-logic';
 import rootReducer from './rootReducer';
 import logic from '../services/logic';
+import httpClient from '../services/httpClient';
 
 export default function (initialState = {}) {
-  return createStore(
+  const logicMiddleware = createLogicMiddleware(logic, { httpClient });
+
+  const store = createStore(
     rootReducer,
     initialState,
     composeWithDevTools((
       applyMiddleware((
-        createLogicMiddleware(logic, {})
+        logicMiddleware
       ))
     )),
   );
+
+  store.logicMiddleware = logicMiddleware;
+
+  return store;
 }
