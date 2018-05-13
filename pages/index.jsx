@@ -1,24 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
-import IconButton from 'material-ui/IconButton';
 import Button from 'material-ui/Button';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
-import MenuIcon from '@material-ui/icons/Menu';
+import Divider from 'material-ui/Divider';
+import Link from 'next/link';
+import Header from '../components/Header';
 import withRoot from '../src/withRoot';
 import withRedux from '../src/withRedux';
 import { actions, selectors } from '../ducks/counter';
 
 const styles = {
-  root: {
-    flexGrow: 1,
-  },
-  flex: {
-    flex: 1,
-  },
   content: {
     padding: 16,
   },
@@ -27,21 +20,16 @@ const styles = {
 const Index = ({
   classes, count, add, subtract, reset,
 }) => (
-  <div className={classes.root}>
-    <AppBar position="static">
-      <Toolbar>
-        <IconButton color="inherit" aria-label="Menu">
-          <MenuIcon />
-        </IconButton>
-        <Typography variant="title" color="inherit" className={classes.flex}>
-          React-next
-        </Typography>
-      </Toolbar>
-    </AppBar>
+  <div>
+    <Header />
     <div className={classes.content}>
       <Typography variant="subheading">
         You can edit <code>pages/index.js</code> now and app will automatically refresh :)
       </Typography>
+      <Link href="/about" passHref>
+        <Button component="a" variant="raised" color="primary">About</Button>
+      </Link>
+      <Divider />
       <div>
         <Typography>Count: {count}</Typography>
       </div>
