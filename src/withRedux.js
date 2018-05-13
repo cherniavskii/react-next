@@ -47,11 +47,17 @@ export default (...connectArgs) => (Component) => {
       ? await Component.getInitialProps({ ...props, isServer, store })
       : {};
 
-    return store.logicMiddleware.whenComplete(() => ({
+    const getProps = () => ({
       store,
       initialState: store.getState(),
       initialProps,
-    }));
+    });
+
+    if (isServer) {
+      return store.logicMiddleware.whenComplete(getProps);
+    }
+
+    return getProps();
   };
 
   ComponentWithRedux.propTypes = {
