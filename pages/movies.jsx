@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import List, { ListItem, ListItemText } from 'material-ui/List';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import { compose } from 'redux';
 import Link from 'next/link';
 import Header from '../components/Header';

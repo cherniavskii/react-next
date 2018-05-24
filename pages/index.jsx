@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
-import Button from 'material-ui/Button';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
-import Divider from 'material-ui/Divider';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import withStyles from '@material-ui/core/styles/withStyles';
+import Divider from '@material-ui/core/Divider';
 import Link from 'next/link';
 import Header from '../components/Header';
 import withRoot from '../src/withRoot';

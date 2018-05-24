@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from 'material-ui/Button';
+import Button from '@material-ui/core/Button';
 import Link from 'next/link';
 import Header from '../components/Header';
 import withRoot from '../src/withRoot';
